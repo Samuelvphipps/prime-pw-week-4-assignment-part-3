@@ -84,7 +84,7 @@ function removeItem(array, item){
     }
 
 console.log('testing remove item, should return and remove water:', removeItem(basket,'water'));
-
+console.log('testing removeItem, should return null:', removeItem(basket, 'papaya'));
 console.log('basket should no longer contain water:', basket);
 
 addItem('jasmine');
