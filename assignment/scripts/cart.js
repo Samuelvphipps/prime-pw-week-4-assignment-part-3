@@ -6,13 +6,8 @@ const maxItems=5;
 
 function addItem(item) {
     if(basket.length<5){
-    basket.push(item);
-    if(basket.indexOf(item)==-1){
-        return false;
-    }
-    else{
+        basket.push(item);
         return true;
-    }
     };
     return false;
 }
@@ -33,7 +28,6 @@ function listItems(array){
         console.log('empty')
     };
     //end list items function
-
 return "Length of list = " + array.length
 };
 //lists items in basket (values in array)
@@ -43,7 +37,7 @@ listItems(basket);
 //test successful now will add new item and test again
 
 addItem('Potatoes');
-console.log('test add potatoes:', basket);
+console.log('test add potatoes:', basket, 'Will rerun listItem function.');
 
 listItems(basket);
 
@@ -63,14 +57,22 @@ console.log('basket now contains:', basket);
 
 //STRETCH GOALS:
 //global constant added up top
+//updating basket for tests
+basket=['jewels', 'water', 'cheese', 'bannanas'];
+
+console.log(basket);
+
 function isFull(array){
     if(array.length<5){
         return false
     };
     return true;
 }
+
+console.log('testing isfull, should return false:', isFull(basket));
+
 //I updated the add item function for the stretch goal
-basket=['jewels', 'water', 'cheese', 'bannanas'];
+
 function removeItem(array, item){
     let location=array.indexOf(item);
     if(location >= 0){
@@ -79,7 +81,17 @@ function removeItem(array, item){
     else{
         return null;
     };
-    
     }
 
+console.log('testing remove item, should return and remove water:', removeItem(basket,'water'));
+
+console.log('basket should no longer contain water:', basket);
+
+addItem('jasmine');
+
+addItem('superduper cheese crackers');
+
+console.log('Basket contains 5 items, it now contains:', basket);
+
+console.log('testing add item to full basket, should return false:', addItem('grapes'));
 
