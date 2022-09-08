@@ -5,7 +5,7 @@ let basket=[];
 const maxItems=5;
 
 function addItem(item) {
-    if(basket.length<5){
+    if(isFull()===false){
         basket.push(item);
         return true;
     };
@@ -41,17 +41,18 @@ console.log('test add potatoes:', basket, 'Will rerun listItem function.');
 
 listItems(basket);
 
-function empty(array){
-    for(i=array.length; i>-1; i--){
-        array.pop();
+function empty(){
+    for(i=basket.length; i>-1; i--){
+        basket.pop();
     };
     console.log('Emptied succesfully.');
     return 'Emptied successfully.';
 };
 //end empty the basket function
+
 console.log('Basket contains', basket, 'before being emptied.');
 
-empty(basket);
+empty();
 
 console.log('basket now contains:', basket);
 
@@ -62,8 +63,8 @@ basket=['jewels', 'water', 'cheese', 'bannanas'];
 
 console.log(basket);
 
-function isFull(array){
-    if(array.length<5){
+function isFull(){
+    if(basket.length<5){
         return false
     };
     return true;
@@ -73,18 +74,20 @@ console.log('testing isfull, should return false:', isFull(basket));
 
 //I updated the add item function for the stretch goal
 
-function removeItem(array, item){
-    let location=array.indexOf(item);
+function removeItem(item){
+    let location=basket.indexOf(item);
     if(location >= 0){
-        array.splice(location, 1); return item;
+        basket.splice(location, 1); return item;
         }
     else{
         return null;
     };
     }
 
-console.log('testing remove item, should return and remove water:', removeItem(basket,'water'));
-console.log('testing removeItem, should return null:', removeItem(basket, 'papaya'));
+console.log('testing remove item, should return and remove water:', removeItem('water'));
+
+console.log('testing removeItem, should return null:', removeItem('papaya'));
+
 console.log('basket should no longer contain water:', basket);
 
 addItem('jasmine');
