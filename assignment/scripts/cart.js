@@ -7,8 +7,12 @@ const maxItems=5;
 function addItem(item) {
     if(basket.length<5){
     basket.push(item);
-    if(basket.indexOf(item)==-1){return false;}
-    else{return true;}
+    if(basket.indexOf(item)==-1){
+        return false;
+    }
+    else{
+        return true;
+    }
     };
     return false;
 }
@@ -50,18 +54,32 @@ function empty(array){
     console.log('Emptied succesfully.');
     return 'Emptied successfully.';
 };
-
+//end empty the basket function
 console.log('Basket contains', basket, 'before being emptied.');
 
 empty(basket);
 
 console.log('basket now contains:', basket);
-//end empty the basket function
+
 //STRETCH GOALS:
 //global constant added up top
 function isFull(array){
-    if(array.length<5){return false};
+    if(array.length<5){
+        return false
+    };
     return true;
 }
-//I updated the add item function
+//I updated the add item function for the stretch goal
+basket=['jewels', 'water', 'cheese', 'bannanas'];
+function removeItem(array, item){
+    let location=array.indexOf(item);
+    if(location >= 0){
+        array.splice(location, 1); return item;
+        }
+    else{
+        return null;
+    };
+    
+    }
+
 
