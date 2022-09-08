@@ -8,6 +8,8 @@ function addItem(item) {
     if(basket.indexOf(item)==-1){return false;}
     else{return true;}
 }
+//end add item function
+
 console.log('checking add item function, adding water and should say true:', addItem('Water'));
 console.log('checking cheese add:', addItem('Cheese'));
 
@@ -15,13 +17,15 @@ console.log('checking cheese add:', addItem('Cheese'));
 console.log('basket contains:', basket);
 
 function listItems(array){
-    let output=[];
    if (array.length>0){
     for( i=0; i<array.length; i++){
     console.log(array[i]);
    };}
-    else{console.log('empty')};
-    
+    else{
+        console.log('empty')
+    };
+    //end list items function
+
 return "Length of list = " + array.length
 };
 //lists items in basket (values in array)
@@ -34,4 +38,20 @@ addItem('Potatoes');
 console.log('test add potatoes:', basket);
 
 listItems(basket);
+
+function empty(array){
+    for(i=array.length; i>-1; i--){
+        array.pop();
+    };
+    console.log('Emptied succesfully.');
+    return 'Emptied successfully.';
+};
+
+console.log('Basket contains', basket, 'before being emptied.');
+
+empty(basket);
+
+console.log('basket now contains:', basket);
+//end empty the basket function
+//STRETCH GOALS:
 
