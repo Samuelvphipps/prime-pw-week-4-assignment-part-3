@@ -30,6 +30,7 @@ function listItems(){
     //end list items function
 return "Length of list = " + basket.length
 };
+//I added in this return so that it wouldnt return 'undefined' if called in console, is this necessary?
 //lists items in basket (values in array)
 
 listItems();
@@ -97,4 +98,8 @@ addItem('superduper cheese crackers');
 console.log('Basket contains 5 items, it now contains:', basket);
 
 console.log('testing add item to full basket, should return false:', addItem('grapes'));
+
+console.log('Should return and remove bannanas:', removeItem('bannanas'));
+
+console.log('Should list only the items that arent bannana:', basket);
 
