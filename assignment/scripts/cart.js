@@ -19,27 +19,27 @@ console.log('checking cheese add:', addItem('Cheese'));
 //added water to array to check, and added cheese
 console.log('basket contains:', basket);
 
-function listItems(array){
-   if (array.length>0){
-    for( i=0; i<array.length; i++){
-    console.log(array[i]);
+function listItems(){
+   if (basket.length>0){
+    for( i=0; i<basket.length; i++){
+    console.log(basket[i]);
    };}
     else{
         console.log('empty')
     };
     //end list items function
-return "Length of list = " + array.length
+return "Length of list = " + basket.length
 };
 //lists items in basket (values in array)
 
-listItems(basket);
+listItems();
 
 //test successful now will add new item and test again
 
 addItem('Potatoes');
 console.log('test add potatoes:', basket, 'Will rerun listItem function.');
 
-listItems(basket);
+listItems();
 
 function empty(){
     for(i=basket.length; i>-1; i--){
